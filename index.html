@@ -3,12 +3,204 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Site Name</title>
+  <title>Adrian's Space Portfolio</title>
+  <link href="https://fonts.googleapis.com/css?family=Orbitron:700|Roboto:400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', Arial, sans-serif;
+      background: linear-gradient(135deg, #141e30 0%, #243b55 100%);
+      color: #e0eafc;
+      min-height: 100vh;
+      background-image: url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1500&q=80');
+      background-size: cover;
+      background-attachment: fixed;
+      background-blend-mode: overlay;
+    }
+    header {
+      background: rgba(15, 30, 50, 0.92);
+      padding: 2rem 0 1rem 0;
+      text-align: center;
+      box-shadow: 0 4px 24px 2px rgba(0,0,0,0.4);
+      border-bottom: 2px solid #2e3b55;
+    }
+    header h1 {
+      font-family: 'Orbitron', 'Roboto', Arial, sans-serif;
+      font-size: 2.8rem;
+      letter-spacing: 0.08em;
+      color: #73eaff;
+      margin: 0 0 0.4em 0;
+      text-shadow: 0 0 12px #21d4fd, 0 2px 8px #17465e;
+      animation: glow 2s infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #21d4fd, 0 2px 8px #17465e; }
+      to   { text-shadow: 0 0 25px #21d4fd, 0 4px 12px #17465e; }
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: inline-flex;
+      gap: 2rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+      border-bottom: 2px solid transparent;
+      transition: border 0.2s, color 0.2s;
+    }
+    nav a:hover {
+      color: #73eaff;
+      border-bottom: 2px solid #73eaff;
+    }
+    main {
+      max-width: 700px;
+      margin: 3rem auto 2rem auto;
+      background: rgba(24, 34, 54, 0.89);
+      border-radius: 18px;
+      box-shadow: 0 8px 40px 8px rgba(32,50,90,0.24);
+      padding: 2.5rem 2rem 1.5rem 2rem;
+      backdrop-filter: blur(2px);
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    section h2 {
+      font-family: 'Orbitron', 'Roboto', Arial, sans-serif;
+      color: #fff;
+      font-size: 2rem;
+      margin-top: 0;
+      letter-spacing: 0.08em;
+      border-left: 4px solid #73eaff;
+      padding-left: 0.6em;
+      text-shadow: 0 0 8px #21d4fd;
+    }
+    #projects ul {
+      margin: 1em 0 0 0.5em;
+      padding: 0;
+      list-style: none;
+    }
+    #projects li {
+      background: rgba(60,130,200,0.12);
+      margin-bottom: 0.7em;
+      padding: 0.7em 1em;
+      border-radius: 10px;
+      font-size: 1.13rem;
+      color: #e0eafc;
+      box-shadow: 0 1px 8px 0 rgba(32, 50, 90, 0.11);
+      position: relative;
+      transition: background 0.2s;
+    }
+    #projects li:before {
+      content: '🚀';
+      margin-right: 0.8em;
+      font-size: 1.1em;
+      vertical-align: middle;
+      opacity: 0.8;
+    }
+    #projects li:hover {
+      background: rgba(60,200,250,0.15);
+    }
+    #home p {
+      font-size: 1.2rem;
+      color: #c2e9fb;
+      margin-top: 0.6em;
+      text-shadow: 0 0 6px #0a192f;
+    }
+    #contact form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 1em;
+      margin-top: 1em;
+    }
+    #contact label {
+      color: #e0eafc;
+      font-size: 1.04rem;
+      margin-bottom: 0.2em;
+    }
+    #contact input[type="text"],
+    #contact input[type="email"] {
+      padding: 0.5em 1em;
+      border-radius: 8px;
+      border: 1.5px solid #73eaff;
+      background: rgba(14,27,40,0.7);
+      color: #fff;
+      font-size: 1.05rem;
+      outline: none;
+      box-shadow: 0 2px 8px 0 rgba(60,120,180,0.11);
+      transition: border 0.2s;
+    }
+    #contact input[type="text"]:focus,
+    #contact input[type="email"]:focus {
+      border: 1.5px solid #21d4fd;
+    }
+    #contact input[type="submit"] {
+      margin-top: 0.5em;
+      padding: 0.7em 1.8em;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(90deg, #21d4fd 0%, #b721ff 100%);
+      color: #fff;
+      font-family: 'Orbitron', 'Roboto', Arial, sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      transition: background 0.2s;
+      box-shadow: 0 2px 10px 1px rgba(60,150,200,0.13);
+    }
+    #contact input[type="submit"]:hover {
+      background: linear-gradient(90deg, #b721ff 0%, #21d4fd 100%);
+    }
+    footer {
+      text-align: center;
+      background: rgba(15, 30, 50, 0.92);
+      color: #b4b8c2;
+      padding: 1.4em 0 1em 0;
+      font-size: 1.01rem;
+      border-top: 2px solid #2e3b55;
+      letter-spacing: 0.04em;
+      margin-top: 3rem;
+      box-shadow: 0 -2px 24px 2px rgba(0,0,0,0.2);
+    }
+    /* Starfield overlay */
+    .stars {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      top: 0; left: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: twinkle 2s infinite alternate;
+    }
+    @keyframes twinkle {
+      from { opacity: 0.5; }
+      to   { opacity: 1; }
+    }
+    /* Responsive */
+    @media (max-width: 800px) {
+      main {
+        margin: 1rem 5vw;
+        padding: 1.3rem 0.7rem;
+      }
+      header h1 { font-size: 2.1rem; }
+      section h2 { font-size: 1.35rem; }
+    }
+  </style>
 </head>
 <body>
-
+  <div class="stars" id="stars"></div>
   <header>
-    <h1>My Portfolio</h1>
+    <h1>Adrian’s Space Portfolio</h1>
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
@@ -20,32 +212,63 @@
 
   <main>
     <section id="home">
-      <h2>Welcome</h2>
-      <p>This is my homepage about space and code.</p>
+      <h2>Welcome to My Universe</h2>
+      <p>
+        <span style="font-size:1.1em;">👨‍🚀</span> Hey there! I'm Adrian, a space enthusiast and a developer with 20+ years of experience building apps that shoot for the stars.<br>
+        From complex dashboards to cosmic 3D worlds, I combine code and curiosity to create solutions as infinite as the cosmos.<br>
+        Explore my journey below!
+      </p>
     </section>
 
     <section id="projects">
-      <h2>My Projects</h2>
+      <h2>Featured Projects</h2>
       <ul>
-        <li>Stock Dashboard</li>
-        <li>3D Visualizer in Unity</li>
-        <li>Lightning Tracker</li>
+        <li><strong>Stock Dashboard</strong><br>
+          <span style="font-size:0.97em;color:#b4eaff;">A real-time, interactive market dashboard—built for speed, clarity, and cosmic scale.</span>
+        </li>
+        <li><strong>3D Visualizer in Unity</strong><br>
+          <span style="font-size:0.97em;color:#b4eaff;">Immersive 3D spaces that let you explore data like galaxies, powered by Unity and C#.</span>
+        </li>
+        <li><strong>Lightning Tracker</strong><br>
+          <span style="font-size:0.97em;color:#b4eaff;">Live maps and alerts for real-world lightning events—because the universe is electric!</span>
+        </li>
       </ul>
     </section>
 
     <section id="contact">
       <h2>Contact Me</h2>
       <form>
-        <label>Name: <input type="text" name="name" /></label><br />
-        <label>Email: <input type="email" name="email" /></label><br />
-        <input type="submit" value="Send" />
+        <label>Name:<br><input type="text" name="name" autocomplete="name" required /></label>
+        <label>Email:<br><input type="email" name="email" autocomplete="email" required /></label>
+        <input type="submit" value="Send Message 🚀" />
       </form>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Adrian's Site. All rights reserved.</p>
+    <p>© 2025 Adrian's Site. All rights reserved. | <span style="color:#73eaff;">Reach for the stars!</span> ✨</p>
   </footer>
-
+  
+  <script>
+    // Starfield effect
+    function randomBetween(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+    const starCount = window.innerWidth < 600 ? 40 : 80;
+    const stars = document.getElementById('stars');
+    for (let i = 0; i < starCount; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      const size = randomBetween(1, 3);
+      star.style.width = `${size}px`;
+      star.style.height = `${size}px`;
+      star.style.top = `${randomBetween(0,100)}vh`;
+      star.style.left = `${randomBetween(0,100)}vw`;
+      star.style.opacity = randomBetween(0.5, 0.9);
+      star.style.animationDuration = `${randomBetween(1.4, 3)}s`;
+      stars.appendChild(star);
+    }
+  </script>
 </body>
 </html>
+
